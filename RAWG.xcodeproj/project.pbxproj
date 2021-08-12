@@ -16,6 +16,7 @@
 		F408F75B266C381F000DD483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F408F759266C381F000DD483 /* LaunchScreen.storyboard */; };
 		F490CF6F26BED18A00B48E64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490CF6D26BED18A00B48E64 /* DetailViewController.swift */; };
 		F490CF7026BED18A00B48E64 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F490CF6E26BED18A00B48E64 /* DetailViewController.xib */; };
+		F4A3C88C26C56C6000B18441 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3C88B26C56C6000B18441 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F408F75C266C381F000DD483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F490CF6D26BED18A00B48E64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F490CF6E26BED18A00B48E64 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		F4A3C88B26C56C6000B18441 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				F408F752266C381B000DD483 /* ViewController.swift */,
 				F490CF6D26BED18A00B48E64 /* DetailViewController.swift */,
+				F4A3C88B26C56C6000B18441 /* LoadingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				F408F753266C381B000DD483 /* ViewController.swift in Sources */,
 				F408F74F266C381B000DD483 /* AppDelegate.swift in Sources */,
+				F4A3C88C26C56C6000B18441 /* LoadingViewController.swift in Sources */,
 				F408F751266C381B000DD483 /* SceneDelegate.swift in Sources */,
 				F490CF6F26BED18A00B48E64 /* DetailViewController.swift in Sources */,
 			);
