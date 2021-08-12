@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.4.3)
+  - DropDown (2.3.13)
+  - SwiftLint (0.43.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - DropDown
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DropDown
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+
+PODFILE CHECKSUM: f8f0bac13b4c18569f8ea9573e3a9b9516ea08dd
+
+COCOAPODS: 1.10.1
