@@ -9,69 +9,105 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="315" id="KGk-i7-Jjw" customClass="ItemRowGameTableViewCell" customModule="RAWG" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemRowGameTableViewCell" id="KGk-i7-Jjw" customClass="ItemRowGameTableViewCell" customModule="RAWG" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="406" height="315"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="406" height="315"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcE-U4-u2X">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="221"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-P3-5OC" customClass="CardView" customModule="RAWG" customModuleProvider="target">
+                        <rect key="frame" x="24" y="8" width="358" height="299"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcE-U4-u2X">
+                                <rect key="frame" x="0.0" y="0.0" width="358" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="Ak2-NC-S7K"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="i3O-yB-bVw">
+                                <rect key="frame" x="17" y="218" width="43" height="10"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_windows" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-2H-HtX">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="bqY-tj-bQG"/>
+                                            <constraint firstAttribute="height" constant="10" id="vtv-7a-oTq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_playstation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcb-xT-BHP">
+                                        <rect key="frame" x="14" y="0.0" width="15" height="10"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_xbox" translatesAutoresizingMaskIntoConstraints="NO" id="cGZ-aO-cAL">
+                                        <rect key="frame" x="33" y="0.0" width="10" height="10"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZAI-iH-7PF">
+                                <rect key="frame" x="17" y="274" width="66" height="15"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LlT-XP-3Yw">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="15"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="4x2-fw-RVv">
+                                                <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0l-MD-Sll">
+                                                <rect key="frame" x="17" y="0.0" width="18" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gift" translatesAutoresizingMaskIntoConstraints="NO" id="ttl-CB-jJT">
+                                        <rect key="frame" x="51" y="0.0" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="huw-BB-q3v"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-Lt-dDt">
+                                <rect key="frame" x="17" y="236" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zgu-FN-av5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play" translatesAutoresizingMaskIntoConstraints="NO" id="J13-Ge-HM7">
+                                <rect key="frame" x="17" y="166" width="29" height="30"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27507081630000002" green="0.25089868900000001" blue="0.25065329669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2212" id="8qW-t7-UBL"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="392" id="GCM-42-wXi"/>
-                            <constraint firstAttribute="height" constant="128" id="SbN-1X-iU7"/>
-                            <constraint firstAttribute="width" constant="240" id="uVw-3q-jcP"/>
+                            <constraint firstItem="ZAI-iH-7PF" firstAttribute="leading" secondItem="SLU-P3-5OC" secondAttribute="leading" constant="17" id="GRS-Ab-Thd"/>
+                            <constraint firstItem="DCS-Lt-dDt" firstAttribute="top" secondItem="i3O-yB-bVw" secondAttribute="bottom" constant="8" symbolic="YES" id="Im7-QP-Ycc"/>
+                            <constraint firstAttribute="bottom" secondItem="ZAI-iH-7PF" secondAttribute="bottom" constant="10" id="Mkn-QF-v5T"/>
+                            <constraint firstItem="i3O-yB-bVw" firstAttribute="top" secondItem="dcE-U4-u2X" secondAttribute="bottom" constant="8" symbolic="YES" id="Pex-ah-9Fy"/>
+                            <constraint firstItem="dcE-U4-u2X" firstAttribute="top" secondItem="SLU-P3-5OC" secondAttribute="top" id="Sul-X7-goj"/>
+                            <constraint firstItem="dcE-U4-u2X" firstAttribute="leading" secondItem="J13-Ge-HM7" secondAttribute="trailing" constant="-46" id="Ucm-6T-Xwy"/>
+                            <constraint firstItem="dcE-U4-u2X" firstAttribute="leading" secondItem="SLU-P3-5OC" secondAttribute="leading" id="XKQ-kd-ZXl"/>
+                            <constraint firstItem="i3O-yB-bVw" firstAttribute="leading" secondItem="SLU-P3-5OC" secondAttribute="leading" constant="17" id="ZnC-oE-0NA"/>
+                            <constraint firstItem="J13-Ge-HM7" firstAttribute="top" secondItem="dcE-U4-u2X" secondAttribute="bottom" constant="-44" id="agY-Cp-YoY"/>
+                            <constraint firstItem="ZAI-iH-7PF" firstAttribute="top" secondItem="DCS-Lt-dDt" secondAttribute="bottom" constant="8" symbolic="YES" id="bcB-ys-yNy"/>
+                            <constraint firstItem="DCS-Lt-dDt" firstAttribute="leading" secondItem="SLU-P3-5OC" secondAttribute="leading" constant="17" id="c7p-qS-MwK"/>
+                            <constraint firstAttribute="trailing" secondItem="dcE-U4-u2X" secondAttribute="trailing" id="liL-kM-QfI"/>
                         </constraints>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_play" translatesAutoresizingMaskIntoConstraints="NO" id="J13-Ge-HM7">
-                        <rect key="frame" x="20" y="171" width="40" height="40"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_windows" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-2H-HtX">
-                        <rect key="frame" x="13" y="229" width="14" height="13"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="4x2-fw-RVv">
-                        <rect key="frame" x="13" y="288" width="14" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_playstation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcb-xT-BHP">
-                        <rect key="frame" x="31" y="227" width="17" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_xbox" translatesAutoresizingMaskIntoConstraints="NO" id="cGZ-aO-cAL">
-                        <rect key="frame" x="52" y="229" width="14" height="15"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-Lt-dDt">
-                        <rect key="frame" x="13" y="255" width="373" height="27"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0l-MD-Sll">
-                        <rect key="frame" x="32" y="288" width="18" height="15"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gift" translatesAutoresizingMaskIntoConstraints="NO" id="ttl-CB-jJT">
-                        <rect key="frame" x="61" y="288" width="11" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="dcE-U4-u2X" secondAttribute="trailing" id="6rb-1r-UDc"/>
-                    <constraint firstItem="dcE-U4-u2X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gTO-WQ-TBR"/>
-                    <constraint firstItem="dcE-U4-u2X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="n9m-yh-l5d"/>
+                    <constraint firstAttribute="bottom" secondItem="SLU-P3-5OC" secondAttribute="bottom" constant="8" id="DAc-VX-agJ"/>
+                    <constraint firstItem="SLU-P3-5OC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Mre-ca-eCb"/>
+                    <constraint firstAttribute="trailing" secondItem="SLU-P3-5OC" secondAttribute="trailing" constant="24" id="R5c-GQ-0ht"/>
+                    <constraint firstItem="SLU-P3-5OC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="i1U-bY-Qzw"/>
+                    <constraint firstItem="SLU-P3-5OC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="zer-F5-5iW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="ivPlaystation" destination="Kcb-xT-BHP" id="Brx-Mq-wyt"/>
                 <outlet property="ivPoster" destination="dcE-U4-u2X" id="PBm-Xh-sM8"/>
@@ -79,6 +115,7 @@
                 <outlet property="ivXbox" destination="cGZ-aO-cAL" id="5ia-pn-SAw"/>
                 <outlet property="lblRating" destination="D0l-MD-Sll" id="rgK-gI-Ary"/>
                 <outlet property="lblTitle" destination="DCS-Lt-dDt" id="X0w-uW-XfU"/>
+                <outlet property="vLayout" destination="SLU-P3-5OC" id="EFo-EC-kJg"/>
             </connections>
             <point key="canvasLocation" x="127.53623188405798" y="240.73660714285714"/>
         </tableViewCell>

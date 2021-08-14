@@ -31,7 +31,7 @@ struct Game: Codable {
         case id
         case name
         case released
-        case backgroundImage
+        case backgroundImage = "background_image"
         case rating
         case genres
     }

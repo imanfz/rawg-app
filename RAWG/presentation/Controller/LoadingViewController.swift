@@ -28,9 +28,10 @@ class LoadingViewController: UIViewController {
         ]
             
         return indicator
-}()
-
-var blurEffectView: UIVisualEffectView = {
+        
+    }()
+    
+    var blurEffectView: UIVisualEffectView = {
     // UIVisualEffectView Configuration
     let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -45,9 +46,10 @@ var blurEffectView: UIVisualEffectView = {
         ]
         
         return blurEffectView
-}()
-
-override func viewDidLoad() {
+        
+    }()
+    
+    override func viewDidLoad() {
     // View Configuration
     view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
@@ -63,6 +65,5 @@ override func viewDidLoad() {
             y: view.bounds.midY
         )
         view.addSubview(loadingActivityIndicator)
+    }
 }
-}
-

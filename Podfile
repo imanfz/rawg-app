@@ -7,6 +7,6 @@ target 'RAWG' do
 
   # Pods for RAWG
     pod 'Alamofire', '~> 5.2'
+    pod 'SDWebImage', '~> 5.0'
     pod 'SwiftLint'
-    pod 'DropDown'
 end

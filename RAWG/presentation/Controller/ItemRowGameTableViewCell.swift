@@ -9,9 +9,10 @@ import UIKit
 
 class ItemRowGameTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var ivPoster: UIImageView!
+    @IBOutlet weak var vLayout: CardView!
     @IBOutlet weak var ivWindows: UIImageView!
     @IBOutlet weak var ivPlaystation: UIImageView!
+    @IBOutlet weak var ivPoster: UIImageView!
     @IBOutlet weak var ivXbox: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblRating: UILabel!
@@ -27,5 +28,4 @@ class ItemRowGameTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

@@ -25,7 +25,7 @@ struct DetailGame: Decodable {
     
 
     enum CodingKeys: String, CodingKey {
-        case error = "error"
+        case error
         case detailGame
     }
 }
