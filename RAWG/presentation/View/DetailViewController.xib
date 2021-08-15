@@ -98,10 +98,15 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play" translatesAutoresizingMaskIntoConstraints="NO" id="zam-QR-j6Z">
+                            <rect key="frame" x="192.5" y="211" width="29" height="30"/>
+                        </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="mCa-S5-uZ1" secondAttribute="trailing" constant="24" id="0G5-le-gjo"/>
                         <constraint firstAttribute="bottom" secondItem="mCa-S5-uZ1" secondAttribute="bottom" constant="8" id="322-vz-VLv"/>
+                        <constraint firstItem="zam-QR-j6Z" firstAttribute="centerX" secondItem="c0M-mv-wia" secondAttribute="centerX" id="7u2-9E-tpt"/>
+                        <constraint firstItem="zam-QR-j6Z" firstAttribute="centerY" secondItem="c0M-mv-wia" secondAttribute="centerY" id="AY8-bp-AkV"/>
                         <constraint firstItem="4MP-Np-UGj" firstAttribute="leading" secondItem="SI6-u2-GyM" secondAttribute="leading" constant="24" id="GcJ-RP-AC9"/>
                         <constraint firstAttribute="trailing" secondItem="bDE-Rl-p4a" secondAttribute="trailing" constant="24" id="HKm-XP-sAb"/>
                         <constraint firstItem="bDE-Rl-p4a" firstAttribute="centerX" secondItem="SI6-u2-GyM" secondAttribute="centerX" id="ImR-vS-XaT"/>
@@ -138,6 +143,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_play" width="29" height="30"/>
         <image name="ic_playstation" width="15" height="10"/>
         <image name="ic_windows" width="10" height="10"/>
         <image name="ic_xbox" width="10" height="10"/>

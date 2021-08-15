@@ -18,6 +18,8 @@
 		F43EF83826C6CF1A0014653F /* ItemRowGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EF83626C6CF1A0014653F /* ItemRowGameTableViewCell.swift */; };
 		F43EF83926C6CF1A0014653F /* ItemRowGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43EF83726C6CF1A0014653F /* ItemRowGameTableViewCell.xib */; };
 		F43EF84126C6E8F50014653F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EF84026C6E8F50014653F /* Extension.swift */; };
+		F46AE23B26C8D28E00B5B197 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AE23926C8D28E00B5B197 /* ProfileViewController.swift */; };
+		F46AE23C26C8D28E00B5B197 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46AE23A26C8D28E00B5B197 /* ProfileViewController.xib */; };
 		F490CF6F26BED18A00B48E64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490CF6D26BED18A00B48E64 /* DetailViewController.swift */; };
 		F490CF7026BED18A00B48E64 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F490CF6E26BED18A00B48E64 /* DetailViewController.xib */; };
 		F4A3C89226C57DC900B18441 /* ListGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A3C89126C57DC900B18441 /* ListGameResponse.swift */; };
@@ -40,6 +42,8 @@
 		F43EF83626C6CF1A0014653F /* ItemRowGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowGameTableViewCell.swift; sourceTree = "<group>"; };
 		F43EF83726C6CF1A0014653F /* ItemRowGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemRowGameTableViewCell.xib; sourceTree = "<group>"; };
 		F43EF84026C6E8F50014653F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F46AE23926C8D28E00B5B197 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F46AE23A26C8D28E00B5B197 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F490CF6D26BED18A00B48E64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F490CF6E26BED18A00B48E64 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		F4A3C89126C57DC900B18441 /* ListGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGameResponse.swift; sourceTree = "<group>"; };
@@ -100,7 +104,6 @@
 				F4FD5C9926C794C4009B1DA1 /* Resources */,
 				F4A3C88F26C57A2A00B18441 /* data */,
 				F4A3C88E26C579FD00B18441 /* presentation */,
-				F408F757266C381F000DD483 /* Assets.xcassets */,
 			);
 			path = RAWG;
 			sourceTree = "<group>";
@@ -117,6 +120,7 @@
 		F490CF7226BED1B300B48E64 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F46AE23926C8D28E00B5B197 /* ProfileViewController.swift */,
 				F43EF83626C6CF1A0014653F /* ItemRowGameTableViewCell.swift */,
 				F408F752266C381B000DD483 /* ViewController.swift */,
 				F490CF6D26BED18A00B48E64 /* DetailViewController.swift */,
@@ -139,21 +143,15 @@
 				F408F754266C381B000DD483 /* Main.storyboard */,
 				F408F759266C381F000DD483 /* LaunchScreen.storyboard */,
 				F490CF6E26BED18A00B48E64 /* DetailViewController.xib */,
+				F46AE23A26C8D28E00B5B197 /* ProfileViewController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F4A3C88D26C5798800B18441 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				F4A3C89026C57DAB00B18441 /* Response */,
-			);
-			path = Remote;
 			sourceTree = "<group>";
 		};
 		F4A3C88E26C579FD00B18441 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F490CF7326BED1BA00B48E64 /* Extension */,
 				F490CF7226BED1B300B48E64 /* Controller */,
 				F490CF7126BED1A900B48E64 /* Base */,
 				F490CF7426BED1C400B48E64 /* View */,
@@ -164,24 +162,16 @@
 		F4A3C88F26C57A2A00B18441 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				F490CF7326BED1BA00B48E64 /* Extension */,
-				F4A3C88D26C5798800B18441 /* Remote */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		F4A3C89026C57DAB00B18441 /* Response */ = {
-			isa = PBXGroup;
-			children = (
 				F4A3C89126C57DC900B18441 /* ListGameResponse.swift */,
 				F4A3C89326C57EE100B18441 /* DetailGameResponse.swift */,
 			);
-			path = Response;
+			path = data;
 			sourceTree = "<group>";
 		};
 		F4FD5C9926C794C4009B1DA1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F408F757266C381F000DD483 /* Assets.xcassets */,
 				F4FD5C9A26C794E2009B1DA1 /* CardView.swift */,
 				F4101D1F26C7E40A00AC5F82 /* CustomColor.swift */,
 			);
@@ -248,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46AE23C26C8D28E00B5B197 /* ProfileViewController.xib in Resources */,
 				F408F75B266C381F000DD483 /* LaunchScreen.storyboard in Resources */,
 				F43EF83926C6CF1A0014653F /* ItemRowGameTableViewCell.xib in Resources */,
 				F408F758266C381F000DD483 /* Assets.xcassets in Resources */,
@@ -328,6 +319,7 @@
 				F408F74F266C381B000DD483 /* AppDelegate.swift in Sources */,
 				F4A3C89426C57EE100B18441 /* DetailGameResponse.swift in Sources */,
 				F4FD5C9B26C794E2009B1DA1 /* CardView.swift in Sources */,
+				F46AE23B26C8D28E00B5B197 /* ProfileViewController.swift in Sources */,
 				F408F751266C381B000DD483 /* SceneDelegate.swift in Sources */,
 				F43EF83826C6CF1A0014653F /* ItemRowGameTableViewCell.swift in Sources */,
 				F4A3C89226C57DC900B18441 /* ListGameResponse.swift in Sources */,

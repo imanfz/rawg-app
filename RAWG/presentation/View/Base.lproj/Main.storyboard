@@ -80,6 +80,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lkd-In-czN"/>
                     <connections>
+                        <outlet property="buttonBarProfile" destination="cxc-UQ-nQQ" id="n8d-Zt-yv1"/>
                         <outlet property="tableView" destination="k4A-84-e6o" id="j1K-Oy-og6"/>
                     </connections>
                 </viewController>

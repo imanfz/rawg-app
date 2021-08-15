@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (5.4.3)
+  - AXPhotoViewer (1.7.1):
+    - AXPhotoViewer/Core (= 1.7.1)
+  - AXPhotoViewer/Core (1.7.1):
+    - AXStateButton (>= 1.1.3)
+    - FLAnimatedImage (>= 1.0.0)
+    - FLAnimatedImage-tvOS (>= 1.0.16)
+  - AXStateButton (1.1.4)
+  - FLAnimatedImage (1.0.16)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -7,20 +15,27 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - AXPhotoViewer
   - SDWebImage (~> 5.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AXPhotoViewer
+    - AXStateButton
+    - FLAnimatedImage
     - SDWebImage
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AXPhotoViewer: f4b021c6e43b0b9dbc7b30cf8b9a4f577d0c1f51
+  AXStateButton: 6c515a433e37551505046429b5be04c12daa8c07
+  FLAnimatedImage: 8f3e854ebf9680b71f0b6e700939687fc4d82b4b
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 10b144f2c7d3b0dd37c6ef4bb1621cf37e186c35
+PODFILE CHECKSUM: 62a0291f98ad4af9eff15a13406e36dc6f7701a5
 
 COCOAPODS: 1.10.1

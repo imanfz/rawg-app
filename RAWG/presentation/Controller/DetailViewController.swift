@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import AXPhotoViewer
 
 class DetailViewController: UIViewController {
     
@@ -47,8 +48,16 @@ class DetailViewController: UIViewController {
         // Get id game
         if let result = idGame {
             observeData(id: result)
+            ivPoster.isUserInteractionEnabled = true
         }
-        
+    }
+    
+    @objc func openImage() {
+        let photos = [AXPhoto(image: ivPoster.image)]
+        let dataSource = AXPhotosDataSource(photos: photos)
+        let photosViewController = AXPhotosViewController(dataSource: dataSource)
+        photosViewController.modalPresentationStyle = .fullScreen
+        self.present(photosViewController, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +118,7 @@ class DetailViewController: UIViewController {
         lblTitle.text = detailGame?.name
         if let imgUrl = URL(string: (detailGame?.backgroundImage?.string) ?? "") {
             ivPoster.sd_setImage(with: imgUrl)
+            ivPoster.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openImage)))
         }
         
         if let genres = detailGame?.genres {
