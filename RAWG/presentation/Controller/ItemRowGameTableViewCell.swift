@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ItemRowGameTableViewCell: UITableViewCell {
 
@@ -16,7 +17,10 @@ class ItemRowGameTableViewCell: UITableViewCell {
     @IBOutlet weak var ivXbox: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblRating: UILabel!
+    @IBOutlet weak var lblRatingTop: UILabel!
+    @IBOutlet weak var lblReleased: UILabel!
     
+    var request = AF.request("")
     
     override func awakeFromNib() {
         super.awakeFromNib()

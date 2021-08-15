@@ -25,7 +25,8 @@ struct Game: Codable {
     let released: String?
     let backgroundImage: String?
     let rating: Double?
-    let genres: [Genre]?
+    let ratingTop: Int?
+    
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,17 +34,6 @@ struct Game: Codable {
         case released
         case backgroundImage = "background_image"
         case rating
-        case genres
-    }
-}
-
-// MARK: - Genre
-struct Genre: Codable {
-    let id: Int?
-    let name: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
+        case ratingTop = "rating_top"
     }
 }

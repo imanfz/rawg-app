@@ -8,8 +8,7 @@
 import Foundation
 
 // MARK: - DetailGameResponse
-
-struct DetailGamesResponse: Decodable {
+struct DetailGameResponse: Decodable {
     let id: Int?
     let name: String?
     let released: String?
@@ -17,15 +16,29 @@ struct DetailGamesResponse: Decodable {
     let rating: Double?
     let ratingTop: Int?
     let description: String?
-}
-
-struct DetailGame: Decodable {
+    let website: String?
+    let genres: [Genre]?
     let error: String?
-    let detailGame: DetailGamesResponse?
-    
 
     enum CodingKeys: String, CodingKey {
         case error
-        case detailGame
+        case id, name, released
+        case backgroundImage = "background_image"
+        case rating
+        case ratingTop = "rating_top"
+        case description = "description_raw"
+        case website
+        case genres
+    }
+}
+
+// MARK: - Genre
+struct Genre: Codable {
+    let id: Int?
+    let name: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
     }
 }
