@@ -54,6 +54,10 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated:true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func observeData() {
         showSpinner(onView: self.view)
         tableView.isHidden = true

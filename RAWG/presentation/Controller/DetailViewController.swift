@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         let photos = [AXPhoto(image: ivPoster.image)]
         let dataSource = AXPhotosDataSource(photos: photos)
         let photosViewController = AXPhotosViewController(dataSource: dataSource)
-        photosViewController.modalPresentationStyle = .fullScreen
+        photosViewController.modalPresentationStyle = .overFullScreen
         self.present(photosViewController, animated: true)
     }
     
@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated:true)
+        self.navigationController?.setNavigationBarHidden(false, animated:false)
     }
     
     @objc func shareButtonClicked(sender: UIView) {
