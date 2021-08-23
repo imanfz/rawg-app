@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(
-            UINib(nibName:"ItemRowGameTableViewCell",
+            UINib(nibName: "ItemRowGameTableViewCell",
                   bundle: nil), forCellReuseIdentifier: "ItemRowGameTableViewCell")
         
         // fetch data
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated:true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -34,20 +34,27 @@ class DetailViewController: UIViewController {
         // setup toolbar
         viewWillAppear(true)
 
-        self.navigationController?.navigationBar.standardAppearance.backgroundColor = darkColor
-        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.backgroundColor = UIColor.darkColor
+        self.navigationController?
+            .navigationBar
+            .standardAppearance
+            .titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
         self.navigationItem.title = "Detail"
         
         // set button share
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_share"), style: .plain, target: self, action: #selector(shareButtonClicked))
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "ic_share"),
+            style: .plain,
+            target: self,
+            action: #selector(shareButtonClicked)
+        )
         // set back button without text
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         
         // Get id game
         if let result = idGame {
-            observeData(id: result)
+            observeData(mId: result)
             ivPoster.isUserInteractionEnabled = true
         }
     }
@@ -67,7 +74,7 @@ class DetailViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated:false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     @objc func shareButtonClicked(sender: UIView) {
@@ -85,19 +92,21 @@ class DetailViewController: UIViewController {
             let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "app-logo")] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
-            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+            activityVC.excludedActivityTypes = [
+                UIActivity.ActivityType.airDrop,
+                UIActivity.ActivityType.addToReadingList
+            ]
 
             activityVC.popoverPresentationController?.sourceView = sender
             self.present(activityVC, animated: true, completion: nil)
-            activityVC.popoverPresentationController?.backgroundColor = darkColor
+            activityVC.popoverPresentationController?.backgroundColor = UIColor.darkColor
         }
     }
 
-    private func observeData(id: Int) {
+    private func observeData(mId: Int) {
         showSpinner(onView: self.view)
         scrollView.isHidden = true
-        
-        let url = apiUrl + "/" + id.string + "?key=" + apiKey
+        let url = apiUrl + "/" + mId.string + "?key=" + apiKey
         
         AF.request(url)
             .validate()
@@ -120,11 +129,10 @@ class DetailViewController: UIViewController {
             ivPoster.sd_setImage(with: imgUrl)
             ivPoster.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openImage)))
         }
-        
         if let genres = detailGame?.genres {
-            for i in genres.indices {
-                if let name = genres[i].name {
-                    if i == 0 {
+            for index in genres.indices {
+                if let name = genres[index].name {
+                    if index == 0 {
                         lblListGenre.text = name
                     } else {
                         lblListGenre.text! += ", " + name
@@ -134,11 +142,9 @@ class DetailViewController: UIViewController {
         }
         
         lblOverview.text = detailGame?.description
-        
         if let top = detailGame?.ratingTop {
             lblRatingTop.text = "Top " + top.string
         }
-        
         if let date = detailGame?.released {
             lblReleased.text = date.toDate()?.toString()
         }

@@ -14,9 +14,10 @@ class ProfileViewController: UIViewController {
 
         // setup toolbar
         viewWillAppear(true)
-    
-        self.navigationController?.navigationBar.standardAppearance.backgroundColor = darkColor
-        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.backgroundColor = UIColor.darkColor
+        self.navigationController?.navigationBar
+            .standardAppearance
+            .titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
         self.navigationItem.title = "Profile"
         // set back button without text
@@ -30,6 +31,6 @@ class ProfileViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated:true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

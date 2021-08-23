@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		F03F73F1C1909D55431AFBD0 /* Pods_RAWG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6243890E57705D4DFA872C40 /* Pods_RAWG.framework */; };
+		F40559EC26D40DD300BB970E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559EB26D40DD300BB970E /* StringExtension.swift */; };
+		F40559EE26D40E1C00BB970E /* LoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559ED26D40E1C00BB970E /* LoadingExtension.swift */; };
+		F40559F026D40E5700BB970E /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559EF26D40E5700BB970E /* ColorExtension.swift */; };
 		F408F74F266C381B000DD483 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408F74E266C381B000DD483 /* AppDelegate.swift */; };
 		F408F751266C381B000DD483 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408F750266C381B000DD483 /* SceneDelegate.swift */; };
 		F408F753266C381B000DD483 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408F752266C381B000DD483 /* ViewController.swift */; };
 		F408F756266C381B000DD483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F408F754266C381B000DD483 /* Main.storyboard */; };
 		F408F758266C381F000DD483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F408F757266C381F000DD483 /* Assets.xcassets */; };
 		F408F75B266C381F000DD483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F408F759266C381F000DD483 /* LaunchScreen.storyboard */; };
-		F4101D2026C7E40A00AC5F82 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4101D1F26C7E40A00AC5F82 /* CustomColor.swift */; };
 		F43EF83826C6CF1A0014653F /* ItemRowGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EF83626C6CF1A0014653F /* ItemRowGameTableViewCell.swift */; };
 		F43EF83926C6CF1A0014653F /* ItemRowGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43EF83726C6CF1A0014653F /* ItemRowGameTableViewCell.xib */; };
-		F43EF84126C6E8F50014653F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EF84026C6E8F50014653F /* Extension.swift */; };
+		F43EF84126C6E8F50014653F /* TableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EF84026C6E8F50014653F /* TableExtension.swift */; };
 		F46AE23B26C8D28E00B5B197 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AE23926C8D28E00B5B197 /* ProfileViewController.swift */; };
 		F46AE23C26C8D28E00B5B197 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46AE23A26C8D28E00B5B197 /* ProfileViewController.xib */; };
 		F490CF6F26BED18A00B48E64 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490CF6D26BED18A00B48E64 /* DetailViewController.swift */; };
@@ -31,6 +33,9 @@
 		47D401A7D3442A6FDCCF9043 /* Pods-RAWG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAWG.release.xcconfig"; path = "Target Support Files/Pods-RAWG/Pods-RAWG.release.xcconfig"; sourceTree = "<group>"; };
 		6243890E57705D4DFA872C40 /* Pods_RAWG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAWG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981E6952869B4DF4E5BCC440 /* Pods-RAWG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAWG.debug.xcconfig"; path = "Target Support Files/Pods-RAWG/Pods-RAWG.debug.xcconfig"; sourceTree = "<group>"; };
+		F40559EB26D40DD300BB970E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F40559ED26D40E1C00BB970E /* LoadingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingExtension.swift; sourceTree = "<group>"; };
+		F40559EF26D40E5700BB970E /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		F408F74B266C381B000DD483 /* RAWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAWG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F408F74E266C381B000DD483 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F408F750266C381B000DD483 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,10 +43,9 @@
 		F408F755266C381B000DD483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F408F757266C381F000DD483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F408F75A266C381F000DD483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F4101D1F26C7E40A00AC5F82 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		F43EF83626C6CF1A0014653F /* ItemRowGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowGameTableViewCell.swift; sourceTree = "<group>"; };
 		F43EF83726C6CF1A0014653F /* ItemRowGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemRowGameTableViewCell.xib; sourceTree = "<group>"; };
-		F43EF84026C6E8F50014653F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F43EF84026C6E8F50014653F /* TableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExtension.swift; sourceTree = "<group>"; };
 		F46AE23926C8D28E00B5B197 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F46AE23A26C8D28E00B5B197 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F490CF6D26BED18A00B48E64 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +135,10 @@
 		F490CF7326BED1BA00B48E64 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F43EF84026C6E8F50014653F /* Extension.swift */,
+				F43EF84026C6E8F50014653F /* TableExtension.swift */,
+				F40559EB26D40DD300BB970E /* StringExtension.swift */,
+				F40559ED26D40E1C00BB970E /* LoadingExtension.swift */,
+				F40559EF26D40E5700BB970E /* ColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -173,7 +180,6 @@
 			children = (
 				F408F757266C381F000DD483 /* Assets.xcassets */,
 				F4FD5C9A26C794E2009B1DA1 /* CardView.swift */,
-				F4101D1F26C7E40A00AC5F82 /* CustomColor.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -313,9 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43EF84126C6E8F50014653F /* Extension.swift in Sources */,
+				F40559EE26D40E1C00BB970E /* LoadingExtension.swift in Sources */,
+				F43EF84126C6E8F50014653F /* TableExtension.swift in Sources */,
 				F408F753266C381B000DD483 /* ViewController.swift in Sources */,
-				F4101D2026C7E40A00AC5F82 /* CustomColor.swift in Sources */,
 				F408F74F266C381B000DD483 /* AppDelegate.swift in Sources */,
 				F4A3C89426C57EE100B18441 /* DetailGameResponse.swift in Sources */,
 				F4FD5C9B26C794E2009B1DA1 /* CardView.swift in Sources */,
@@ -323,7 +329,9 @@
 				F408F751266C381B000DD483 /* SceneDelegate.swift in Sources */,
 				F43EF83826C6CF1A0014653F /* ItemRowGameTableViewCell.swift in Sources */,
 				F4A3C89226C57DC900B18441 /* ListGameResponse.swift in Sources */,
+				F40559EC26D40DD300BB970E /* StringExtension.swift in Sources */,
 				F490CF6F26BED18A00B48E64 /* DetailViewController.swift in Sources */,
+				F40559F026D40E5700BB970E /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

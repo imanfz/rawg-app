@@ -20,8 +20,6 @@ class ItemRowGameTableViewCell: UITableViewCell {
     @IBOutlet weak var lblRatingTop: UILabel!
     @IBOutlet weak var lblReleased: UILabel!
     
-    var request = AF.request("")
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
