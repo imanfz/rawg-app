@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonBarProfile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    var request = AF.request("https://api.rawg.io/api/games?key=e001986026694736a6d022e8d556abc4")
+    let url = URL(string: "https://api.rawg.io/api/games?key=e001986026694736a6d022e8d556abc4")
     
     var listGame: [Game]?
     var loadingSpinner: UIView?
@@ -61,19 +61,28 @@ class ViewController: UIViewController {
     private func observeData() {
         showSpinner(onView: self.view)
         tableView.isHidden = true
-        request
-            .validate()
-            .responseDecodable(of: ListGameResponse.self) {(response) in
-                guard let result = response.value else {return}
-                
-                if result.error == nil {
-                    self.listGame = result.results
+        AF.request(
+            "https://api.rawg.io/api/games?key=e001986026694736a6d022e8d556abc4"
+        ).responseDecodable(of: ListGameResponse.self) { response in
+            switch (response.result) {
+            case .success(let value):
+                if value.error == nil {
+                    self.listGame = value.results
                     self.tableView.reloadData()
                     self.tableView.isHidden = false
-                    self.removeSpinner()
                 } else {
-                    print("Error = " + (result.error)!)
+                    self.tableView.isHidden = false
+                    print("Error = " + (value.error)!)
                 }
+                self.removeSpinner()
+            case .failure(let error):
+                if error._code == NSURLErrorTimedOut {
+                    print("Error: Request time out")
+                } else {
+                    print("Error:: \(error)")
+                }
+                self.removeSpinner()
             }
+        }
     }
 }

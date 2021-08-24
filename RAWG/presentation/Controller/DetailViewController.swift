@@ -109,18 +109,26 @@ class DetailViewController: UIViewController {
         let url = apiUrl + "/" + mId.string + "?key=" + apiKey
         
         AF.request(url)
-            .validate()
-            .responseDecodable(of: DetailGameResponse.self) {(response) in
-                guard let result = response.value else {return}
-                self.detailGame = result
-                if result.error == nil {
-                    self.setDataToUI()
-                    self.scrollView.isHidden = false
+            .responseDecodable(of: DetailGameResponse.self) { response in
+                switch (response.result) {
+                case .success(let value):
                     self.removeSpinner()
-                } else {
-                    print("Error = " + (result.error)!)
-                }
+                    if value.error == nil {
+                        self.detailGame = value
+                        self.setDataToUI()
+                        self.scrollView.isHidden = false
+                    } else {
+                        print("Error = " + (value.error)!)
+                    }
+                case .failure(let error):
+                    self.removeSpinner()
+                    if error._code == NSURLErrorTimedOut {
+                        print("Error: Request time out")
+                    } else {
+                        print("Error:: \(error)")
+                    }
             }
+        }
     }
     
     private func setDataToUI() {
