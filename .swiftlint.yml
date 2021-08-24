@@ -50,4 +50,5 @@ identifier_name:
     - id
     - URL
     - GlobalAPIKey
+function_parameter_count: 10
 reporter: "xcode"
