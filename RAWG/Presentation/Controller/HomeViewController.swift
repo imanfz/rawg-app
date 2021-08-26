@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var buttonBarProfile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -22,8 +22,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // setup toolbar
-        viewWillDisappear(true)
-        
         buttonBarProfile.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonProfile)))
         buttonBarProfile.isUserInteractionEnabled = true
         
@@ -49,11 +47,6 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
