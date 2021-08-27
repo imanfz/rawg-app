@@ -13,6 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if !UserDefaults.standard.bool(forKey: "photos") &&
+            !UserDefaults.standard.bool(forKey: "name") &&
+            !UserDefaults.standard.bool(forKey: "email") {
+            ProfileModel.photos = (UIImage(named: "my_photos")?.pngData())!
+            ProfileModel.name = "Iman Faizal"
+            ProfileModel.email = "imanfz1103@gmail.com"
+        }
         return true
     }
 
