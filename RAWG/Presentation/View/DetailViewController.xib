@@ -4,21 +4,20 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="RAWG" customModuleProvider="target">
             <connections>
-                <outlet property="ivPlaystation" destination="oW9-5C-wg6" id="Aj7-Lz-L2z"/>
+                <outlet property="btnFavorites" destination="M8w-He-7aQ" id="DK8-Ja-K2U"/>
                 <outlet property="ivPoster" destination="c0M-mv-wia" id="oBi-Ob-kls"/>
-                <outlet property="ivWindows" destination="jct-Q8-vuR" id="pDw-MH-hQ0"/>
-                <outlet property="ivXbox" destination="Sz3-3Z-u5t" id="Zfs-Tr-eq5"/>
                 <outlet property="lblListGenre" destination="4MP-Np-UGj" id="gNR-w0-Vjz"/>
                 <outlet property="lblOverview" destination="mCa-S5-uZ1" id="fvk-tP-L3T"/>
                 <outlet property="lblRatingTop" destination="PMm-7n-blt" id="rDQ-ub-V8d"/>
-                <outlet property="lblReleased" destination="Hln-GZ-obg" id="vC7-e2-uLb"/>
-                <outlet property="lblTitle" destination="bDE-Rl-p4a" id="xlT-YY-cAp"/>
-                <outlet property="scrollView" destination="SI6-u2-GyM" id="JQd-nc-XMt"/>
+                <outlet property="lblReleased" destination="Hln-GZ-obg" id="5cg-i1-HBm"/>
+                <outlet property="lblTitle" destination="bDE-Rl-p4a" id="n7f-Ap-gR7"/>
+                <outlet property="scrollView" destination="SI6-u2-GyM" id="4xI-jn-H68"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,8 +54,10 @@
                                 </imageView>
                             </subviews>
                         </stackView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c0M-mv-wia">
-                            <rect key="frame" x="24" y="111" width="366" height="230"/>
+                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c0M-mv-wia">
+                            <rect key="frame" x="24" y="112" width="366" height="227.5"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="230" id="5Xk-Jp-AW7"/>
                             </constraints>
@@ -101,6 +102,14 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play" translatesAutoresizingMaskIntoConstraints="NO" id="zam-QR-j6Z">
                             <rect key="frame" x="192.5" y="211" width="29" height="30"/>
                         </imageView>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="M8w-He-7aQ">
+                            <rect key="frame" x="355" y="379.5" width="35" height="32.5"/>
+                            <color key="tintColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="1sh-Ko-uRH"/>
+                                <constraint firstAttribute="width" constant="35" id="TGY-6c-Eqg"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="mCa-S5-uZ1" secondAttribute="trailing" constant="24" id="0G5-le-gjo"/>
@@ -111,6 +120,7 @@
                         <constraint firstAttribute="trailing" secondItem="bDE-Rl-p4a" secondAttribute="trailing" constant="24" id="HKm-XP-sAb"/>
                         <constraint firstItem="bDE-Rl-p4a" firstAttribute="centerX" secondItem="SI6-u2-GyM" secondAttribute="centerX" id="ImR-vS-XaT"/>
                         <constraint firstItem="4MP-Np-UGj" firstAttribute="top" secondItem="Hln-GZ-obg" secondAttribute="bottom" constant="8" symbolic="YES" id="Iu1-P0-qiu"/>
+                        <constraint firstAttribute="trailing" secondItem="M8w-He-7aQ" secondAttribute="trailing" constant="24" id="NC6-lb-g55"/>
                         <constraint firstItem="mCa-S5-uZ1" firstAttribute="top" secondItem="F9j-Wr-63t" secondAttribute="bottom" constant="6" id="SuS-HL-JXT"/>
                         <constraint firstAttribute="trailing" secondItem="c0M-mv-wia" secondAttribute="trailing" constant="24" id="Y3T-rK-m2A"/>
                         <constraint firstItem="c0M-mv-wia" firstAttribute="top" secondItem="bDE-Rl-p4a" secondAttribute="bottom" constant="24" id="YG9-v6-OJT"/>
@@ -125,6 +135,7 @@
                         <constraint firstItem="mCa-S5-uZ1" firstAttribute="leading" secondItem="SI6-u2-GyM" secondAttribute="leading" constant="24" id="sLv-9d-7Zh"/>
                         <constraint firstItem="raP-jM-FJt" firstAttribute="centerX" secondItem="SI6-u2-GyM" secondAttribute="centerX" id="sP5-bO-2Wp"/>
                         <constraint firstItem="F9j-Wr-63t" firstAttribute="leading" secondItem="SI6-u2-GyM" secondAttribute="leading" constant="24" id="uan-nF-gaO"/>
+                        <constraint firstItem="M8w-He-7aQ" firstAttribute="top" secondItem="PMm-7n-blt" secondAttribute="bottom" constant="8" symbolic="YES" id="ucc-xI-23r"/>
                         <constraint firstItem="PMm-7n-blt" firstAttribute="top" secondItem="c0M-mv-wia" secondAttribute="bottom" constant="12" id="wGD-nA-FD2"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="8zZ-lk-5cS"/>
@@ -143,9 +154,14 @@
         </view>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="ic_play" width="29" height="30"/>
         <image name="ic_playstation" width="15" height="10"/>
         <image name="ic_windows" width="10" height="10"/>
         <image name="ic_xbox" width="10" height="10"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

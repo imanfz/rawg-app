@@ -19,8 +19,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-P3-5OC" customClass="CardView" customModule="RAWG" customModuleProvider="target">
                         <rect key="frame" x="24" y="8" width="358" height="299"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcE-U4-u2X">
-                                <rect key="frame" x="0.0" y="0.0" width="358" height="210"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dcE-U4-u2X">
+                                <rect key="frame" x="0.0" y="1" width="358" height="207.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="Ak2-NC-S7K"/>
                                 </constraints>
@@ -145,5 +147,6 @@
         <image name="ic_star" width="15" height="15"/>
         <image name="ic_windows" width="10" height="10"/>
         <image name="ic_xbox" width="10" height="10"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
     </resources>
 </document>

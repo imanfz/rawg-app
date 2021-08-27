@@ -10,22 +10,29 @@ import UIKit
 class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var labelNoData: UILabel!
     
-    var listGame: [Game]?
+    var listFavorite: [FavoriteModel] = []
+    private lazy var favoriteProvider: DatabaseProvider = {
+        return DatabaseProvider()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // setup toolbar
-        self.navigationController?.navigationBar.standardAppearance.backgroundColor = UIColor.darkColor
-        self.navigationController?.navigationBar
-            .standardAppearance
-            .titleTextAttributes = [.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
-        self.navigationItem.title = "My Favorite"
-        // set back button without text
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
-        
+        setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        loadData()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private func setupView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(
@@ -33,16 +40,21 @@ class FavoritesViewController: UIViewController {
                   bundle: nil), forCellReuseIdentifier: "ItemRowGameTableViewCell")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    private func getData() {
-        
+    private func loadData() {
+        showSpinner(onView: self.view)
+        self.favoriteProvider.getAllFavorite { result in
+            DispatchQueue.main.async {
+                self.removeSpinner()
+                if result.isEmpty {
+                    self.labelNoData.isHidden = false
+                    self.tableView.isHidden = true
+                } else {
+                    self.labelNoData.isHidden = true
+                    self.tableView.isHidden = false
+                    self.listFavorite = result
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }

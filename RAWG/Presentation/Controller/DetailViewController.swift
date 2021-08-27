@@ -7,33 +7,39 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import AXPhotoViewer
+import Toaster
 
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var lblReleased: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var ivWindows: UIImageView!
-    @IBOutlet weak var ivPlaystation: UIImageView!
-    @IBOutlet weak var ivXbox: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var ivPoster: UIImageView!
     @IBOutlet weak var lblRatingTop: UILabel!
     @IBOutlet weak var lblListGenre: UILabel!
     @IBOutlet weak var lblOverview: UILabel!
+    @IBOutlet weak var btnFavorites: UIImageView!
     
-    let apiUrl = "https://api.rawg.io/api/games"
-    let apiKey = "e001986026694736a6d022e8d556abc4"
+    private let apiUrl = "https://api.rawg.io/api/games"
+    private let apiKey = "e001986026694736a6d022e8d556abc4"
+    
+    private lazy var databaseProvider: DatabaseProvider = {
+        return DatabaseProvider()
+    }()
     
     var idGame: Int?
     var detailGame: DetailGameResponse?
+    private var favoriteState: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // setup toolbar
-        viewWillAppear(true)
 
+        setupView()
+    }
+    
+    func setupView() {
         self.navigationController?.navigationBar.standardAppearance.backgroundColor = UIColor.darkColor
         self.navigationController?
             .navigationBar
@@ -53,10 +59,15 @@ class DetailViewController: UIViewController {
         // set back button without text
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         
+        // setup Toast
+        configureAppearance()
+        configureAccessibility()
+        
         // Get id game
         if let result = idGame {
             observeData(mId: result)
-            ivPoster.isUserInteractionEnabled = true
+            checkStateFavorite()
+            btnFavorites.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addToFavorite)))
         }
     }
     
@@ -134,7 +145,9 @@ class DetailViewController: UIViewController {
     private func setDataToUI() {
         lblTitle.text = detailGame?.name
         if let imgUrl = URL(string: (detailGame?.backgroundImage?.string) ?? "") {
-            ivPoster.sd_setImage(with: imgUrl)
+            ivPoster.af.setImage(
+                withURL: imgUrl,
+                placeholderImage: UIImage(systemName: "photo.fill"))
             ivPoster.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openImage)))
         }
         if let genres = detailGame?.genres {
@@ -153,8 +166,73 @@ class DetailViewController: UIViewController {
         if let top = detailGame?.ratingTop {
             lblRatingTop.text = "Top " + top.string
         }
+        
+        
         if let date = detailGame?.released {
             lblReleased.text = date.toDate()?.toString()
+        }
+        
+        setImageFavoriteState()
+    }
+    
+    private func configureAppearance() {
+        let appearance = ToastView.appearance()
+        appearance.backgroundColor = .lightGray
+        appearance.textColor = .black
+        appearance.font = .systemFont(ofSize: 14)
+        appearance.textInsets = UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20)
+        appearance.bottomOffsetPortrait = 24
+        appearance.cornerRadius = 20
+        appearance.maxWidthRatio = 0.7
+    }
+
+    private func configureAccessibility() {
+        ToastCenter.default.isSupportAccessibility = true
+    }
+    
+    private func setImageFavoriteState() {
+        if favoriteState == 1 {
+            btnFavorites.image = UIImage(systemName: "heart.fill")
+        } else {
+            btnFavorites.image = UIImage(systemName: "heart")
+        }
+    }
+    
+    private func checkStateFavorite() {
+        databaseProvider.checkFavoritesById(idGame!) { result in
+            DispatchQueue.main.async {
+                if result {
+                    self.favoriteState = 1
+                } else {
+                    self.favoriteState = 0
+                }
+            }
+        }
+    }
+    
+    @objc func addToFavorite() {
+        if favoriteState == 0 {
+            databaseProvider.addFavorites(
+                (detailGame?.id)!,
+                (detailGame?.name)!,
+                (detailGame?.backgroundImage)!,
+                (detailGame?.released)!,
+                (detailGame?.rating)!,
+                (detailGame?.ratingTop)!) {
+                DispatchQueue.main.async {
+                    Toast(text: "Successfuly add to favorite", duration: Delay.long).show()
+                    self.favoriteState = 1
+                    self.setImageFavoriteState()
+                }
+            }
+        } else {
+            databaseProvider.removeFavorite((detailGame?.id)!) {
+                DispatchQueue.main.async {
+                    Toast(text: "Successful remove from favorite", duration: Delay.long).show()
+                    self.favoriteState = 0
+                    self.setImageFavoriteState()
+                }
+            }
         }
     }
 }

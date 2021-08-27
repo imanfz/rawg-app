@@ -11,7 +11,6 @@
 		F40559EC26D40DD300BB970E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559EB26D40DD300BB970E /* StringExtension.swift */; };
 		F40559EE26D40E1C00BB970E /* LoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559ED26D40E1C00BB970E /* LoadingExtension.swift */; };
 		F40559F026D40E5700BB970E /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559EF26D40E5700BB970E /* ColorExtension.swift */; };
-		F4082CB626D68FCD004157D0 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4082CB526D68FCD004157D0 /* Table.swift */; };
 		F4082CB826D696C8004157D0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4082CB726D696C8004157D0 /* FavoritesViewController.swift */; };
 		F408F74F266C381B000DD483 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408F74E266C381B000DD483 /* AppDelegate.swift */; };
 		F408F751266C381B000DD483 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408F750266C381B000DD483 /* SceneDelegate.swift */; };
@@ -42,7 +41,6 @@
 		F40559EB26D40DD300BB970E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F40559ED26D40E1C00BB970E /* LoadingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingExtension.swift; sourceTree = "<group>"; };
 		F40559EF26D40E5700BB970E /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		F4082CB526D68FCD004157D0 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		F4082CB726D696C8004157D0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		F408F74B266C381B000DD483 /* RAWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAWG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F408F74E266C381B000DD483 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			children = (
 				F408F757266C381F000DD483 /* Assets.xcassets */,
 				F4FD5C9A26C794E2009B1DA1 /* CardView.swift */,
-				F4082CB526D68FCD004157D0 /* Table.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -366,7 +363,6 @@
 				F4082CB826D696C8004157D0 /* FavoritesViewController.swift in Sources */,
 				F43EF83826C6CF1A0014653F /* ItemRowGameTableViewCell.swift in Sources */,
 				F4A3C89226C57DC900B18441 /* ListGameResponse.swift in Sources */,
-				F4082CB626D68FCD004157D0 /* Table.swift in Sources */,
 				F499BC1826D490110044A632 /* DatabaseProvider.swift in Sources */,
 				F40559EC26D40DD300BB970E /* StringExtension.swift in Sources */,
 				F499BC1B26D4905C0044A632 /* Database.xcdatamodeld in Sources */,

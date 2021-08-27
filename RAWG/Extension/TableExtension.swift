@@ -5,8 +5,8 @@
 //  Created by Iman Faizal on 14/08/21.
 //
 
-import Foundation
-import SDWebImage
+import UIKit
+import AlamofireImage
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -20,16 +20,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             
             let game = self.listGame?[indexPath.row]
             
-            if let imgUrl = URL(string: (game?.backgroundImage) ?? "") {
-                cell.ivPoster.sd_setImage(with: imgUrl)
+            if let imgUrl = URL(string: (game?.backgroundImage)!) {
+                cell.ivPoster.af.setImage(
+                    withURL: imgUrl,
+                    placeholderImage: UIImage(systemName: "photo.fill"))
+                
+                // set top round corner image view
+                cell.ivPoster.layer.cornerRadius = 10
+                cell.ivPoster.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
             
             cell.lblTitle.text = game?.name
             cell.lblRating.text = game?.rating?.string
-            
-            // set top round corner image view
-            cell.ivPoster.layer.cornerRadius = 10
-            cell.ivPoster.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
 
             if let top = game?.ratingTop {
                 cell.lblRatingTop.text = "Top " + top.string
@@ -64,31 +66,33 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listGame?.count ?? 0
+        return listFavorite.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: "ItemRowGameTableViewCell", for: indexPath) as? ItemRowGameTableViewCell {
             
-            let game = self.listGame?[indexPath.row]
+            let game = self.listFavorite[indexPath.row]
             
-            if let imgUrl = URL(string: (game?.backgroundImage) ?? "") {
-                cell.ivPoster.sd_setImage(with: imgUrl)
+            if let imgUrl = URL(string: (game.backgroundImage) ?? "") {
+                cell.ivPoster.af.setImage(
+                    withURL: imgUrl,
+                    placeholderImage: UIImage(systemName: "photo.fill"))
+                
+                // set top round corner image view
+                cell.ivPoster.layer.cornerRadius = 10
+                cell.ivPoster.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
             
-            cell.lblTitle.text = game?.name
-            cell.lblRating.text = game?.rating?.string
-            
-            // set top round corner image view
-            cell.ivPoster.layer.cornerRadius = 10
-            cell.ivPoster.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+            cell.lblTitle.text = game.name
+            cell.lblRating.text = game.rating?.string
 
-            if let top = game?.ratingTop {
+            if let top = game.ratingTop {
                 cell.lblRatingTop.text = "Top " + top.string
             }
             
-            if let date = game?.released {
+            if let date = game.released {
                 cell.lblReleased.text = date.toDate()?.toString()
             }
             
@@ -107,7 +111,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         let detail = DetailViewController(nibName: "DetailViewController", bundle: nil)
 
         // Mengirim id game
-        detail.idGame = 1 // listGame?[indexPath.row].id
+        detail.idGame = listFavorite[indexPath.row].id
 
         // Push/mendorong view controller lain
         self.navigationController?

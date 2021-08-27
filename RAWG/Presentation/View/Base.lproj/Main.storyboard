@@ -96,20 +96,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7hC-hT-dox">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7hC-hT-dox">
+                                <rect key="frame" x="0.0" y="68" width="414" height="745"/>
                                 <color key="backgroundColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r52-vB-yNx">
+                                <rect key="frame" x="0.0" y="467" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yla-Ox-OeU"/>
                         <color key="backgroundColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7hC-hT-dox" firstAttribute="top" secondItem="yla-Ox-OeU" secondAttribute="top" constant="24" id="GwG-Hg-hZb"/>
+                            <constraint firstItem="7hC-hT-dox" firstAttribute="bottom" secondItem="yla-Ox-OeU" secondAttribute="bottom" id="PqW-PB-GmR"/>
+                            <constraint firstItem="7hC-hT-dox" firstAttribute="trailing" secondItem="yla-Ox-OeU" secondAttribute="trailing" id="XpO-oH-FtB"/>
+                            <constraint firstItem="7hC-hT-dox" firstAttribute="leading" secondItem="yla-Ox-OeU" secondAttribute="leading" id="twm-OR-vmn"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="JXy-Nn-Zyw"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" selectedImage="heart.fill" id="JXy-Nn-Zyw"/>
                     <connections>
+                        <outlet property="labelNoData" destination="r52-vB-yNx" id="VfA-xB-pgx"/>
                         <outlet property="tableView" destination="7hC-hT-dox" id="6aI-fO-cxG"/>
                     </connections>
                 </viewController>
@@ -160,6 +174,8 @@
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="film.fill" catalog="system" width="128" height="93"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="ic_dropdown" width="10" height="5"/>
         <image name="ic_user" width="25" height="25"/>
     </resources>

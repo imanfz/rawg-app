@@ -13,14 +13,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonBarProfile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    let url = URL(string: "https://api.rawg.io/api/games?key=e001986026694736a6d022e8d556abc4")
+    private let url = URL(string: "https://api.rawg.io/api/games?key=e001986026694736a6d022e8d556abc4")
     
     var listGame: [Game]?
-    var loadingSpinner: UIView?
+    private var loadingSpinner: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+    }
+    
+    private func setupView() {
         // setup toolbar
         buttonBarProfile.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonProfile)))
         buttonBarProfile.isUserInteractionEnabled = true
@@ -30,9 +34,6 @@ class HomeViewController: UIViewController {
         tableView.register(
             UINib(nibName: "ItemRowGameTableViewCell",
                   bundle: nil), forCellReuseIdentifier: "ItemRowGameTableViewCell")
-        
-        // fetch data
-        observeData()
     }
     
     @objc func buttonProfile() {
@@ -44,7 +45,10 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        // fetch data
+        observeData()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
