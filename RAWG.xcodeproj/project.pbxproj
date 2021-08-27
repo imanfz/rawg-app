@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F03F73F1C1909D55431AFBD0 /* Pods_RAWG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6243890E57705D4DFA872C40 /* Pods_RAWG.framework */; };
+		F40193A026D8967D00C39610 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401939E26D8967D00C39610 /* EditProfileViewController.swift */; };
+		F40193A126D8967D00C39610 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F401939F26D8967D00C39610 /* EditProfileViewController.xib */; };
+		F40193A326D8975B00C39610 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40193A226D8975B00C39610 /* RoundButton.swift */; };
+		F40193A526D89E0A00C39610 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40193A426D89E0A00C39610 /* ImagePicker.swift */; };
 		F40559EC26D40DD300BB970E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559EB26D40DD300BB970E /* StringExtension.swift */; };
 		F40559EE26D40E1C00BB970E /* LoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559ED26D40E1C00BB970E /* LoadingExtension.swift */; };
 		F40559F026D40E5700BB970E /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40559EF26D40E5700BB970E /* ColorExtension.swift */; };
@@ -38,6 +42,10 @@
 		47D401A7D3442A6FDCCF9043 /* Pods-RAWG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAWG.release.xcconfig"; path = "Target Support Files/Pods-RAWG/Pods-RAWG.release.xcconfig"; sourceTree = "<group>"; };
 		6243890E57705D4DFA872C40 /* Pods_RAWG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAWG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981E6952869B4DF4E5BCC440 /* Pods-RAWG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAWG.debug.xcconfig"; path = "Target Support Files/Pods-RAWG/Pods-RAWG.debug.xcconfig"; sourceTree = "<group>"; };
+		F401939E26D8967D00C39610 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		F401939F26D8967D00C39610 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		F40193A226D8975B00C39610 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		F40193A426D89E0A00C39610 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F40559EB26D40DD300BB970E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F40559ED26D40E1C00BB970E /* LoadingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingExtension.swift; sourceTree = "<group>"; };
 		F40559EF26D40E5700BB970E /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -135,6 +143,7 @@
 		F490CF7226BED1B300B48E64 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F401939E26D8967D00C39610 /* EditProfileViewController.swift */,
 				F46AE23926C8D28E00B5B197 /* ProfileViewController.swift */,
 				F43EF83626C6CF1A0014653F /* ItemRowGameTableViewCell.swift */,
 				F408F752266C381B000DD483 /* HomeViewController.swift */,
@@ -151,6 +160,7 @@
 				F40559EB26D40DD300BB970E /* StringExtension.swift */,
 				F40559ED26D40E1C00BB970E /* LoadingExtension.swift */,
 				F40559EF26D40E5700BB970E /* ColorExtension.swift */,
+				F40193A426D89E0A00C39610 /* ImagePicker.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 				F408F759266C381F000DD483 /* LaunchScreen.storyboard */,
 				F490CF6E26BED18A00B48E64 /* DetailViewController.xib */,
 				F46AE23A26C8D28E00B5B197 /* ProfileViewController.xib */,
+				F401939F26D8967D00C39610 /* EditProfileViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 			children = (
 				F408F757266C381F000DD483 /* Assets.xcassets */,
 				F4FD5C9A26C794E2009B1DA1 /* CardView.swift */,
+				F40193A226D8975B00C39610 /* RoundButton.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -278,6 +290,7 @@
 				F46AE23C26C8D28E00B5B197 /* ProfileViewController.xib in Resources */,
 				F408F75B266C381F000DD483 /* LaunchScreen.storyboard in Resources */,
 				F43EF83926C6CF1A0014653F /* ItemRowGameTableViewCell.xib in Resources */,
+				F40193A126D8967D00C39610 /* EditProfileViewController.xib in Resources */,
 				F408F758266C381F000DD483 /* Assets.xcassets in Resources */,
 				F408F756266C381B000DD483 /* Main.storyboard in Resources */,
 				F490CF7026BED18A00B48E64 /* DetailViewController.xib in Resources */,
@@ -353,10 +366,12 @@
 				F499BC1D26D4C9150044A632 /* FavoriteModel.swift in Sources */,
 				F40559EE26D40E1C00BB970E /* LoadingExtension.swift in Sources */,
 				F499BC1626D48F8F0044A632 /* ProfileModel.swift in Sources */,
+				F40193A526D89E0A00C39610 /* ImagePicker.swift in Sources */,
 				F43EF84126C6E8F50014653F /* TableExtension.swift in Sources */,
 				F408F753266C381B000DD483 /* HomeViewController.swift in Sources */,
 				F408F74F266C381B000DD483 /* AppDelegate.swift in Sources */,
 				F4A3C89426C57EE100B18441 /* DetailGameResponse.swift in Sources */,
+				F40193A026D8967D00C39610 /* EditProfileViewController.swift in Sources */,
 				F4FD5C9B26C794E2009B1DA1 /* CardView.swift in Sources */,
 				F46AE23B26C8D28E00B5B197 /* ProfileViewController.swift in Sources */,
 				F408F751266C381B000DD483 /* SceneDelegate.swift in Sources */,
@@ -365,6 +380,7 @@
 				F4A3C89226C57DC900B18441 /* ListGameResponse.swift in Sources */,
 				F499BC1826D490110044A632 /* DatabaseProvider.swift in Sources */,
 				F40559EC26D40DD300BB970E /* StringExtension.swift in Sources */,
+				F40193A326D8975B00C39610 /* RoundButton.swift in Sources */,
 				F499BC1B26D4905C0044A632 /* Database.xcdatamodeld in Sources */,
 				F490CF6F26BED18A00B48E64 /* DetailViewController.swift in Sources */,
 				F40559F026D40E5700BB970E /* ColorExtension.swift in Sources */,

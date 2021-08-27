@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="RAWG" customModuleProvider="target">
             <connections>
+                <outlet property="ivPhotos" destination="BrV-Nb-ecY" id="4Np-dW-pPU"/>
+                <outlet property="lblEmail" destination="YAq-Zf-gXz" id="qXD-w4-efm"/>
+                <outlet property="lblFullname" destination="Ltl-4g-4P4" id="avs-gx-ISW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,20 +20,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_photos" translatesAutoresizingMaskIntoConstraints="NO" id="BrV-Nb-ecY">
-                    <rect key="frame" x="96" y="111" width="222" height="257"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BrV-Nb-ecY">
+                    <rect key="frame" x="96" y="112" width="222" height="197.5"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="257" id="VXM-Uo-G5G"/>
+                        <constraint firstAttribute="height" constant="200" id="VXM-Uo-G5G"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iman faizal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-4g-4P4">
-                    <rect key="frame" x="145" y="404" width="125" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fullname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-4g-4P4">
+                    <rect key="frame" x="24" y="347" width="366" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imanfz1103@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAq-Zf-gXz">
-                    <rect key="frame" x="117" y="442" width="180" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAq-Zf-gXz">
+                    <rect key="frame" x="24" y="385" width="366" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -39,20 +43,20 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1418156028" green="0.1136121973" blue="0.1133447066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="YAq-Zf-gXz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="117" id="3jz-5Q-aXJ"/>
+                <constraint firstItem="YAq-Zf-gXz" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3jz-5Q-aXJ"/>
                 <constraint firstItem="YAq-Zf-gXz" firstAttribute="top" secondItem="Ltl-4g-4P4" secondAttribute="bottom" constant="8" symbolic="YES" id="8HI-9b-uNY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BrV-Nb-ecY" secondAttribute="trailing" constant="96" id="L7m-vN-fGj"/>
                 <constraint firstItem="BrV-Nb-ecY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="96" id="P5y-33-Iiq"/>
-                <constraint firstItem="Ltl-4g-4P4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="145" id="bks-E8-XfR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ltl-4g-4P4" secondAttribute="trailing" constant="144" id="fVR-WA-Kka"/>
+                <constraint firstItem="Ltl-4g-4P4" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="bks-E8-XfR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ltl-4g-4P4" secondAttribute="trailing" constant="24" id="fVR-WA-Kka"/>
                 <constraint firstItem="Ltl-4g-4P4" firstAttribute="top" secondItem="BrV-Nb-ecY" secondAttribute="bottom" constant="36" id="lun-eg-99c"/>
                 <constraint firstItem="BrV-Nb-ecY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="67" id="v4D-un-sNO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YAq-Zf-gXz" secondAttribute="trailing" constant="117" id="zK2-1O-4sO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="YAq-Zf-gXz" secondAttribute="trailing" constant="24" id="zK2-1O-4sO"/>
             </constraints>
             <point key="canvasLocation" x="27.536231884057973" y="17.410714285714285"/>
         </view>
     </objects>
     <resources>
-        <image name="my_photos" width="378" height="496"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
     </resources>
 </document>

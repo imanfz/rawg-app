@@ -5,7 +5,7 @@
 //  Created by Iman Faizal on 24/08/21.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class DatabaseProvider {
@@ -32,59 +32,7 @@ class DatabaseProvider {
             taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             return taskContext
     }
-    
-    func getProfile(completion: @escaping(_ profiles: ProfileModel) -> Void) {
-        let taskContext = newTaskContext()
-        taskContext.perform {
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
-            fetchRequest.fetchLimit = 1
-            do {
-                if let result = try
-                    taskContext.fetch(fetchRequest).first {
-                    let profile = ProfileModel(
-                        photo: result.value(forKeyPath:
-                            "photo") as? Any,
-                        name: result.value(forKeyPath:
-                            "name") as? String,
-                        email: result.value(forKeyPath:
-                            "email") as? String
-                    )
-                    
-                    completion(profile)
-                }
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-        }
-    }
-    
-    func updateProfile(
-        _ photo: Any,
-        _ name: String,
-        _ email: String,
-        completion: @escaping() -> Void
-    ) {
-        let taskContext = newTaskContext()
-        taskContext.perform {
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
-            fetchRequest.fetchLimit = 1
-            fetchRequest.predicate = NSPredicate(format: "name == \(name)")
-            if let result = try? taskContext.fetch(fetchRequest), let profile = result.first as? Profile {
-                profile.setValue(photo, forKey: "photo")
-                profile.setValue(name, forKey: "name")
-                profile.setValue(email, forKey: "email")
-                
-                do {
-                    try taskContext.save()
-                    completion()
-                } catch let error as NSError {
-                    print("Could not save. \(error), \(error.userInfo)")
-                }
-            }
-        }
-        
-    }
-    
+
     func getAllFavorite(completion: @escaping(_ favorites: [FavoriteModel]) -> Void) {
         let taskContext = newTaskContext()
         taskContext.perform {
@@ -195,6 +143,5 @@ class DatabaseProvider {
                 print(error.localizedDescription)
             }
         }
-        
     }
 }

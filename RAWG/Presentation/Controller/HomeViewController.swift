@@ -50,6 +50,10 @@ class HomeViewController: UIViewController {
         // fetch data
         observeData()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        removeSpinner()
+    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -60,25 +64,25 @@ class HomeViewController: UIViewController {
         tableView.isHidden = true
         AF.request(
             "https://api.rawg.io/api/games?key=e001986026694736a6d022e8d556abc4"
-        ).responseDecodable(of: ListGameResponse.self) { response in
+        ).validate().responseDecodable(of: ListGameResponse.self) { response in
             switch (response.result) {
             case .success(let value):
+                self.tableView.isHidden = false
+                self.removeSpinner()
                 if value.error == nil {
                     self.listGame = value.results
                     self.tableView.reloadData()
-                    self.tableView.isHidden = false
                 } else {
-                    self.tableView.isHidden = false
                     print("Error = " + (value.error)!)
                 }
-                self.removeSpinner()
             case .failure(let error):
+                self.tableView.isHidden = false
+                self.removeSpinner()
                 if error._code == NSURLErrorTimedOut {
                     print("Error: Request time out")
                 } else {
                     print("Error:: \(error)")
                 }
-                self.removeSpinner()
             }
         }
     }
